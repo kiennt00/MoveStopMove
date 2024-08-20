@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bae53204cd2100145a3a02aaf20e507d, type: 3}
+  m_Name: HairData
+  m_EditorClassIdentifier: 
+  hairDataList:
+  - hairType: 0
+    price: 0
+    imageSprite: {fileID: 0}
+    prefab: {fileID: 5255852078261513890, guid: 32e32e0016ae5954d97cdecea85e2fdb, type: 3}
+    buffType: 0
+  - hairType: 1
+    price: 100
+    imageSprite: {fileID: 21300000, guid: 599040abc7664b64a88d29b89debcc45, type: 3}
+    prefab: {fileID: 3346617113623368517, guid: 97abb10393f3d4b45929506e87786ca8, type: 3}
+    buffType: 0
+  - hairType: 2
+    price: 200
+    imageSprite: {fileID: 21300000, guid: bab9ce41ccaad8c4b805b76398e6a4ec, type: 3}
+    prefab: {fileID: 7973657743615646870, guid: 93bb95ae6285fbf4ba50d3fe8e558c21, type: 3}
+    buffType: 0
+  - hairType: 3
+    price: 300
+    imageSprite: {fileID: 21300000, guid: 873448afe97f2304284654587bf2ef84, type: 3}
+    prefab: {fileID: 7267905150170516139, guid: e732152101c500d4c91d2beb5e60b1bb, type: 3}
+    buffType: 0
+  - hairType: 4
+    price: 400
+    imageSprite: {fileID: 21300000, guid: e2e3e15adfda8394ba475bf3cff1e4fa, type: 3}
+    prefab: {fileID: 3893383954427367935, guid: 118e2b7a6a5a63d40913a5275eed549c, type: 3}
+    buffType: 0
+  - hairType: 5
+    price: 500
+    imageSprite: {fileID: 21300000, guid: bbbdfd7afed315344b1545530f93ef5e, type: 3}
+    prefab: {fileID: 7083677563023544373, guid: f5b9026bba555c640af1507ee843dc87, type: 3}
+    buffType: 0
+  - hairType: 6
+    price: 600
+    imageSprite: {fileID: 21300000, guid: 6310cd6b78fb87d47a6dcd492869273e, type: 3}
+    prefab: {fileID: 3018899126857452401, guid: bec580e2c66f23d4b8f0ef4d947fe189, type: 3}
+    buffType: 0
+  - hairType: 7
+    price: 700
+    imageSprite: {fileID: 21300000, guid: 62e47e07e7f60e8428221a38e61e60f8, type: 3}
+    prefab: {fileID: 8559147373073471784, guid: 5a067e2e280d4074c977449baa9aa5c8, type: 3}
+    buffType: 0
+  - hairType: 8
+    price: 800
+    imageSprite: {fileID: 21300000, guid: b6a531c0a0239b742908378215008b1e, type: 3}
+    prefab: {fileID: 3013310195181942839, guid: d10376f235e04f94b9d628a0639d5b70, type: 3}
+    buffType: 0
+  - hairType: 9
+    price: 900
+    imageSprite: {fileID: 21300000, guid: 246bdda6e26ad3946900da503eba0160, type: 3}
+    prefab: {fileID: 6362898412352949216, guid: 8a785228a38a1ca4ebf2671b9b534a0f, type: 3}
+    buffType: 0
+  - hairType: 10
+    price: 1000
+    imageSprite: {fileID: 21300000, guid: b4df751f5a467ff4d9553fab08a2da0c, type: 3}
+    prefab: {fileID: 261245797014573602, guid: 984744df4031f6545875c5bf5010e20b, type: 3}
+    buffType: 0

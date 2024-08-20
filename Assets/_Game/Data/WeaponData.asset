@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3430d353d07c622459e7d8dda69ac757, type: 3}
+  m_Name: WeaponData
+  m_EditorClassIdentifier: 
+  weaponDataList:
+  - weaponType: 0
+    poolType: 1
+    name: Arrow
+    price: 0
+    weaponHoldPrefab: {fileID: 2987378335271128039, guid: a8cc68b0e9cf8ad4c9b98761a757eb0c, type: 3}
+    weaponShopPrefab: {fileID: 2987378335271128039, guid: c75de4cde1c38254abe674a0a1cd069a, type: 3}
+    weaponSkinList: []
+  - weaponType: 5
+    poolType: 6
+    name: Knife
+    price: 100
+    weaponHoldPrefab: {fileID: 1260173524068862871, guid: 4ed5c15db22443c47956418ab64417e5, type: 3}
+    weaponShopPrefab: {fileID: 1260173524068862871, guid: 1dfe77db3ac84e041a2bdb46a185b2a5, type: 3}
+    weaponSkinList: []
+  - weaponType: 6
+    poolType: 7
+    name: Lollipop
+    price: 200
+    weaponHoldPrefab: {fileID: 2108311020702200442, guid: b90b66f99cf8eae4c801d67ac3ed6d1f, type: 3}
+    weaponShopPrefab: {fileID: 2108311020702200442, guid: 42d1d91c8e3d31e46a64ddb3b4fe401b, type: 3}
+    weaponSkinList: []
+  - weaponType: 3
+    poolType: 4
+    name: Candy
+    price: 300
+    weaponHoldPrefab: {fileID: 8570151828667302143, guid: 83c627d3f0224614d836f58fb9c7c92b, type: 3}
+    weaponShopPrefab: {fileID: 8570151828667302143, guid: c2bde2edd35db7649bb3e9ef9236dd99, type: 3}
+    weaponSkinList: []
+  - weaponType: 4
+    poolType: 5
+    name: Hammer
+    price: 600
+    weaponHoldPrefab: {fileID: 4523256219210136327, guid: 238298f774f98474d9c230c2cf1ac999, type: 3}
+    weaponShopPrefab: {fileID: 4523256219210136327, guid: f70b7159476752444a5e1d18e4030d86, type: 3}
+    weaponSkinList: []
+  - weaponType: 1
+    poolType: 2
+    name: Axe
+    price: 800
+    weaponHoldPrefab: {fileID: 3619340395373133824, guid: 712a3826093f4da4e81de2c2e857dfb1, type: 3}
+    weaponShopPrefab: {fileID: 3619340395373133824, guid: a62133ced74ef8a4183dfc91d8b1b174, type: 3}
+    weaponSkinList: []
+  - weaponType: 2
+    poolType: 3
+    name: Boomerang
+    price: 1000
+    weaponHoldPrefab: {fileID: 3263279069447551785, guid: a788281dfc31225468700bd13050d8ba, type: 3}
+    weaponShopPrefab: {fileID: 3263279069447551785, guid: 198209e3a2cb9064e96068a0c692181d, type: 3}
+    weaponSkinList: []
