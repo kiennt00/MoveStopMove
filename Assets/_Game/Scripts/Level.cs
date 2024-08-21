@@ -27,7 +27,7 @@ public class Level : MonoBehaviour
             Character character = (Character)param;
             if (character is Bot bot)
             {
-                if (alive - botAtSameTime > 0)
+                if (alive - botAtSameTime + (LevelManager.Ins.player.isDead ? 1 : 0) > 0)
                 {
                     StartCoroutine(IEGenerateBot(Constants.WFS_2_S_5));
                 }

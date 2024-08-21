@@ -69,7 +69,7 @@ public class LevelManager : Singleton<LevelManager>
 
     public void Finish()
     {
-        if (GameManager.Ins.IsState(GameState.Finish))
+        if (GameManager.Ins.IsState(GameState.Finish) || GameManager.Ins.IsState(GameState.Revive))
         {
             return;
         }
