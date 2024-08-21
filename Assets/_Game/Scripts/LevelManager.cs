@@ -1,45 +1,70 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UIElements;
 
 public class LevelManager : Singleton<LevelManager>
 {
-    public List<Level> levels = new();
+    public List<Level> listLevel = new();
     public Level currentLevel;
     public int currentLevelIndex;
 
     public Player player;
 
-    public void OnLoadLevel(int levelIndex)
+    private void Start()
+    {
+        UIManager.Ins.OpenUI<UIMainmenu>();
+        currentLevelIndex = DataManager.Ins.GetCurrentLevel();
+        LoadLevel(currentLevelIndex);
+        InitPlayer();
+    }
+
+    public void LoadLevel(int levelIndex)
     {
         if (currentLevel != null)
         {
             Destroy(currentLevel.gameObject);
         }
 
-        if (levelIndex < levels.Count)
-        {
-            currentLevelIndex = levelIndex;
-            currentLevel = Instantiate(levels[levelIndex]);
-            currentLevel.InitLevel();
-        }
+        currentLevelIndex = levelIndex;
+        currentLevel = Instantiate(listLevel[levelIndex]);
 
-        InitPlayer();
+        NavMesh.RemoveAllNavMeshData();
+        NavMesh.AddNavMeshData(currentLevel.navmeshData);
+
+        currentLevel.InitLevel();
     }
 
     public void InitPlayer()
     {
-        player.InitCharacter(0);
+        player.InitCharacter();
         player.tf.position = currentLevel.GetRandomNodeStart().position;
         player.tf.rotation = Quaternion.Euler(0, 180, 0);
     }
 
     public void PlayAgain()
     {
-        player.ResetCharacter();
         currentLevel.ResetLevel();
+        currentLevel.InitLevel();
+        player.ResetCharacter();
         InitPlayer();
+    }
+
+    public void NextLevel()
+    {
+        if (currentLevelIndex < listLevel.Count - 1)
+        {
+            currentLevelIndex++;
+            DataManager.Ins.SaveCurrentLevel(currentLevelIndex);
+            LoadLevel(currentLevelIndex);
+            player.ResetCharacter();
+            InitPlayer();
+        }
+        else
+        {
+            PlayAgain();
+        }
     }
 
     public void Finish()
@@ -65,8 +90,11 @@ public class LevelManager : Singleton<LevelManager>
         }
         else
         {
+            player.CancelAttack();
+            player.StopMove();
+            player.ChangeAnim(Constants.ANIM_VICTORY);
             UIManager.Ins.OpenUI<UIVictory>();
-        }      
+        }
     }
 
     public void Victory()
@@ -87,7 +115,7 @@ public class LevelManager : Singleton<LevelManager>
         else
         {
             UIManager.Ins.OpenUI<UIGameplay>();
-        }    
+        }
     }
 }
 

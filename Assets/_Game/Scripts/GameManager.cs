@@ -11,12 +11,6 @@ public class GameManager : Singleton<GameManager>
         Application.targetFrameRate = 60;
     }
 
-    void Start()
-    {
-        UIManager.Ins.OpenUI<UIMainmenu>();
-        LevelManager.Ins.OnLoadLevel(0);
-    }
-
     public void ChangeGameState(GameState gameState)
     {
         this.gameState = gameState;

@@ -248,7 +248,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6373617121385928812}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 3289290148467501335}
   - component: {fileID: 8437477476804141796}
   - component: {fileID: 4602108091413327440}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -442,7 +442,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 386762945125303697}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: TargetedImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}

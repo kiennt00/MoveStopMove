@@ -5,7 +5,6 @@ using UnityEngine;
 public class AttackZone : MonoBehaviour
 {
     [SerializeField] int characterLayer;
-    [SerializeField] int nodeStartLayer;
     [SerializeField] Character owner;
 
     private void OnTriggerEnter(Collider other)
@@ -18,12 +17,6 @@ public class AttackZone : MonoBehaviour
                 owner.AddTarget(character);
             }
         }
-
-        if (other.gameObject.layer == nodeStartLayer)
-        {
-            NodeStart nodeStart = Cache.Ins.GetCachedComponent<NodeStart>(other);
-            nodeStart.AddCharacter(owner);
-        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -31,12 +24,6 @@ public class AttackZone : MonoBehaviour
         if (!owner.isDead && other.gameObject.layer == characterLayer)
         {
             owner.RemoveTarget(Cache.Ins.GetCachedComponent<Character>(other));
-        }
-
-        if (other.gameObject.layer == nodeStartLayer)
-        {
-            NodeStart nodeStart = Cache.Ins.GetCachedComponent<NodeStart>(other);
-            nodeStart.RemoveCharacter(owner);
         }
     }
 }

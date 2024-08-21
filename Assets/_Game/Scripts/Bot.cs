@@ -52,12 +52,17 @@ public class Bot : Character
         }
     }
 
-    public override void InitCharacter(int level)
+    public override void InitCharacter()
     {
-        base.InitCharacter(level);
-        characterInfo.UpdateTextName(RandomName());
-        agent.speed = MoveSpeed;
+        base.InitCharacter();
+        characterInfo.UpdateTextName(RandomName());       
         ChangeState(new WaitState());
+    }
+
+    public override void LevelUp(int level)
+    {
+        base.LevelUp(level);
+        agent.speed = MoveSpeed;
     }
 
     public void SetDestination(Vector3 destination)

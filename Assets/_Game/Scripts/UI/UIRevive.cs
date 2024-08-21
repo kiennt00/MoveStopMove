@@ -7,18 +7,21 @@ using UnityEngine.UI;
 public class UIRevive : UICanvas
 {
     [SerializeField] Button btnRevive, btnQuit;
-    [SerializeField] TextMeshProUGUI textCountdown;
-
+    [SerializeField] TextMeshProUGUI textCountdown, textGold, textPrice;
     [SerializeField] Transform ImageCountdown;
-
+    [SerializeField] int price = 50;
     int countdown;
 
     private void Awake()
     {
         btnRevive.onClick.AddListener(() =>
         {
-            CloseDirectly();
-            LevelManager.Ins.RevivePlayer();           
+            if (DataManager.Ins.GetCurrentGold() >= price)
+            {
+                CloseDirectly();
+                DataManager.Ins.AdjustGold(-price);
+                LevelManager.Ins.RevivePlayer();
+            }                      
         });
 
         btnQuit.onClick.AddListener(() =>
@@ -26,11 +29,24 @@ public class UIRevive : UICanvas
             CloseDirectly();
             UIManager.Ins.OpenUI<UIDefeat>();
         });
+
+        this.RegisterListener(EventID.OnGoldChanged, (param) =>
+        {
+            UpdateTextGold(DataManager.Ins.GetCurrentGold());
+        });
+
+        UpdateTextGold(DataManager.Ins.GetCurrentGold());
+        textPrice.text = price.ToString();
     }
 
     private void Update()
     {
         ImageCountdown.Rotate(0f, 0f, -360f * Time.deltaTime);
+    }
+
+    private void UpdateTextGold(int gold)
+    {
+        textGold.text = gold.ToString();
     }
 
     public override void Open()

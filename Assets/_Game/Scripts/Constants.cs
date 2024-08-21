@@ -15,6 +15,7 @@ public static class Constants
     public const string PP_CURRENT_ITEM = "CurrentItem";
     public const string PP_PLAYER_NAME = "PlayerName";
     public const string PP_CURRENT_GOLD = "CurrentGold";
+    public const string PP_CURRENT_LEVEL = "CurrentLevel";
 
     public static readonly WaitForSeconds WFS_0_S = new WaitForSeconds(0f);
     public static readonly WaitForSeconds WFS_0_S_5 = new WaitForSeconds(0.5f);

@@ -37,11 +37,22 @@ public class DataManager : Singleton<DataManager>
         {
             PlayerPrefs.SetInt(Constants.PP_NOT_FIRST_ATTEMPT, 1);
 
+            SaveCurrentLevel(0);
             AdjustGold(5000);
 
             UnlockItem<WeaponType>(WeaponType.Arrow);
             SaveCurrentItem<WeaponType>(WeaponType.Arrow);
         }
+    }
+
+    public int GetCurrentLevel()
+    {
+        return PlayerPrefs.GetInt(Constants.PP_CURRENT_LEVEL, 0);
+    }
+
+    public void SaveCurrentLevel(int levelIndex)
+    {
+        PlayerPrefs.SetInt(Constants.PP_CURRENT_LEVEL, levelIndex);
     }
 
     public void UnlockItem<ItemType>(ItemType itemType) where ItemType : Enum

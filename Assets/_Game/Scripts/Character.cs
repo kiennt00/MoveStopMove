@@ -50,7 +50,7 @@ public class Character : GameUnit
 
     protected WeaponType weaponType;
 
-    public float LevelScale => 1.0f + level * 0.05f;
+    public float LevelScale => 1.0f + level * 0.1f;
     protected float AttackRange => (baseAttackRange + bonusAttackRange) * LevelScale;
     protected float MoveSpeed => (baseMoveSpeed + bonusMoveSpeed) * LevelScale;
     protected float AttackSpeed => baseAttackSpeed + bonusAttackSpeed;
@@ -90,13 +90,11 @@ public class Character : GameUnit
         }
     }
 
-    public virtual void InitCharacter(int level)
+    public virtual void InitCharacter()
     {
         float range = AttackRange + weaponStartPoint.localPosition.z;
         float scale = range / attackZoneCollider.radius;
         attackZoneCollider.gameObject.transform.localScale = new Vector3(scale, scale, scale);
-
-        LevelUp(level);
 
         if (GameManager.Ins.IsState(GameState.Gameplay))
         {
@@ -110,7 +108,7 @@ public class Character : GameUnit
         SetActiveCharacterInfo(isActive);
     }
 
-    public void LevelUp(int level)
+    public virtual void LevelUp(int level)
     {
         this.level += level;
         characterInfo.UpdateTextLevel(this.level);
@@ -178,7 +176,7 @@ public class Character : GameUnit
         ChangeAnim(Constants.ANIM_IDLE);
     }
 
-    protected void CancelAttack()
+    public void CancelAttack()
     {
         if (attackCoroutine != null)
         {
@@ -202,6 +200,7 @@ public class Character : GameUnit
     public void ResetCharacter()
     {
         level = 0;
+        LevelUp(level);
         isDead = false;
     }
 

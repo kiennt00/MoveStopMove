@@ -18,7 +18,7 @@ public class UIVictory : UICanvas
             CloseDirectly();
             DataManager.Ins.AdjustGold(gold);
             UIManager.Ins.OpenUI<UIMainmenu>();
-            LevelManager.Ins.PlayAgain();
+            LevelManager.Ins.NextLevel();
         });
     }
 
@@ -32,8 +32,6 @@ public class UIVictory : UICanvas
         base.Open();
         GameManager.Ins.ChangeGameState(GameState.Finish);
         AudioManager.Ins.PlaySFX(SFXType.Finish);
-        LevelManager.Ins.player.StopMove();
-        LevelManager.Ins.player.ChangeAnim(Constants.ANIM_VICTORY);
         gold = LevelManager.Ins.player.Level * 5;
         UpdateTextGold(gold);
     }

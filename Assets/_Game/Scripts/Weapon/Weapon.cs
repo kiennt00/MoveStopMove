@@ -51,7 +51,7 @@ public class Weapon : GameUnit
             OnDespawn();
         });
 
-        sequence.Play();        
+        sequence.Play();
     }
 
     protected void OnTriggerEnter(Collider other)
@@ -65,12 +65,12 @@ public class Weapon : GameUnit
                 character.OnDead();
                 owner.LevelUp(1);
                 OnDespawn();
-            }
 
-            if(character is Player player)
-            {
-                player.killedBy = owner.characterInfo.GetTextName();
-                player.killedByMaterialColor = owner.characterInfo.GetMaterialColor();
+                if (character is Player player)
+                {
+                    player.killedBy = owner.characterInfo.GetTextName();
+                    player.killedByMaterialColor = owner.characterInfo.GetMaterialColor();
+                }
             }
         }
 

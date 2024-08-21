@@ -11,6 +11,5 @@ public enum EventID
     OnItemEquipped,
     OnTabSelected,
     OnGoldChanged,
-    OnNodeStartReady,
-    OnNodeStartBusy,
+
 }
